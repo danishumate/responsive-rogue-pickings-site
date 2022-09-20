@@ -1,7 +1,5 @@
 html {
 	font-size: 16px;
-	height: 100%;
-	width: 100%;
 }
 
 body {
@@ -10,14 +8,13 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-size: 1em;
-	flex-flow: row wrap;
 }
 
 .container{
 	max-width: 1200px;
 	width: 90%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
 	
@@ -48,6 +45,9 @@ p {
 
 /*The widths are in a percentage!*/
 header {
+	border-bottom: 3px solid #77a466;
+	text-align: center;
+	width: 100%;
 	display: flex; 
 	justify-content: center;
 	align-items: center;
@@ -56,18 +56,18 @@ header {
 }
 
 header h1 {
-	border-bottom: 3px solid #77a466;
 	width: 100%;
 	margin: 0;
-	padding: 38px 0;
-	text-align: center;
+	padding: 38px 20px 20px 20px;
+	border-bottom: 3px solid #77a466;
 }
 header h1 span {
 	color: #77a466;
 }
 
 header nav {
-	padding: 46px 0;
+	padding: 20px 0;
+	width: 100%;
 }
 header nav ul {
 	margin: 0;
@@ -77,7 +77,8 @@ header nav ul li {
 	text-transform: uppercase;
 	font-weight: 700;
 	font-size: .875em;
-	padding:  10px;
+	padding:  10px 0;
+	list-style: none;
 	
 }
 header nav ul li a{
@@ -85,12 +86,6 @@ header nav ul li a{
 	color:#77a466;
 }
 
-nav ul li  {
-	display: flex;	
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
 
 /*The widths are in a percentage!*/
 .top-section,
@@ -98,13 +93,12 @@ nav ul li  {
 	display: flex; 
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
+	flex-flow: row wrap;
 }
 
 
 .main-image img {
 	width: 100%;
-	border-top: 3px solid #77a466;
 	border-bottom: 3px solid #77a466;
 }
 
@@ -117,7 +111,7 @@ nav ul li  {
 .main-title p {
 	padding: 0;
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625;
 }
 
 .section-one,
@@ -126,17 +120,7 @@ nav ul li  {
 	border-top: 1px solid #eee;
 	width: 100%;
 }
-/*
-.section-one h3 {
-	padding: 10px 0;
-	width: 100%;
-}
-.section-two h3,
-.section-three h3 {
-	padding: 10px 30px;
-	
-}
-*/
+
 .menu {
 	list-style: none;
 	padding: 0;
@@ -149,23 +133,24 @@ nav ul li  {
 .reviews {
 	color: #333;
 	font-size: 1em;
-	line-height: 21px;
+	line-height: 1.3125;
 	
 }
 
 .address {
 	font-size: 1em;
-	line-height: 24px;
+	line-height: 1.5;
 }
 
 /*The widths are in a percentage!*/
 footer {
 	border-top: 3px solid #eee;
-	margin: 0 auto;
 	text-align: center;
+	width: 100%;
 	display: flex; 
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 	
 }
 footer span {
@@ -173,4 +158,54 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: .875em;
+}
+
+
+/** Media Queries **/
+
+@media only screen and (min-width: 768px) {
+	/** tablet styles here **/ 
+.bottom-section {
+	justify-content: space-between;
+	align-items: flex-start;
+	border-top: 1px solid #eee;
+}
+
+.section-one,
+.section-two,
+.section-three {
+	border-top: none;
+	flex-basis: 30%;
+}
+
+.section-two {
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	padding: 0 20px;
+}
+	
+
+@media all and (min-width: 1200px) {
+/** desktop styles here **/
+
+header{ 
+	justify-content: space-between;
+}
+
+header h1 {
+	width: 30%;
+	padding: 0;
+	border-bottom: none;
+	text-align: left;
+}
+
+header nav{
+	width: 40%;
+}
+
+header nav ul {
+	display: flex;
+	justify-content: space-between;
+}
+
 }
